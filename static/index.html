@@ -1,1 +1,121 @@
-<h2>Future home of inventory app</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Inventory Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-content">
+                <h1>Warehouse Inventory</h1>
+                <p class="subtitle">Database Admin Interface</p>
+            </div>
+            <div class="header-actions">
+                <button id="refreshBtn" class="btn btn-primary" title="Refresh inventory">
+                    <span class="btn-icon">↻</span> Refresh
+                </button>
+                <button id="addNewBtn" class="btn btn-secondary" title="Add new item (Coming soon)">
+                    <span class="btn-icon">+</span> New Item
+                </button>
+            </div>
+        </header>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-info">
+                <span id="totalItems" class="status-item">Total Items: <strong>0</strong></span>
+                <span id="lowStockCount" class="status-item warning">Low Stock: <strong>0</strong></span>
+            </div>
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading inventory...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <!-- Table Container -->
+            <div id="tableContainer" class="table-container" style="display: none;">
+                <div class="table-wrapper">
+                    <table id="inventoryTable" class="admin-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">Product ID</th>
+                                <th class="col-sku">SKU</th>
+                                <th class="col-name">Product Name</th>
+                                <th class="col-category">Category</th>
+                                <th class="col-quantity">Quantity</th>
+                                <th class="col-min-stock">Min Stock</th>
+                                <th class="col-price">Unit Price</th>
+                                <th class="col-supplier">Supplier</th>
+                                <th class="col-location">Location</th>
+                                <th class="col-updated">Last Updated</th>
+                                <th class="col-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryBody">
+                            <!-- Rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-state-content">
+                    <p>No inventory items found</p>
+                    <button id="addNewEmpty" class="btn btn-secondary">Add First Item</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Action Modals (Placeholder containers for future implementation) -->
+    
+    <!-- Edit Modal (for future implementation) -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Item</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Edit functionality coming soon...</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default">Cancel</button>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal (for future implementation) -->
+    <div id="deleteModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete Item</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Delete confirmation coming soon...</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default">Cancel</button>
+                <button class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

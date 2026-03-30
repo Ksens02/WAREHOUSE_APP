@@ -7,10 +7,12 @@ with Session(engine) as session:
 
     print(basketball)
 
-    basketball.quantity_in_stock += 55
+    # To add or subtract from an items quantity.
+    
+    # basketball.quantity_in_stock += 55
 
-    session.add(basketball)
-    session.commit()
-    session.refresh(basketball)
-    print(basketball)
+    # session.add(basketball)
+    # session.commit()
+    # session.refresh(basketball)
+    # print(basketball)
 
